@@ -5,8 +5,8 @@ pipeline {
 
         stage('Python_check') {
             steps {
-              sh 'python3 --version || python --version'
-              sh 'python3 -m ensurepip --upgrade'
+              sh 'python --version'
+              sh 'python -m ensurepip --upgrade'
             }    
         }
 
