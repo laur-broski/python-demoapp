@@ -2,10 +2,16 @@ pipeline {
     agent any
 
     stages {
+
+        sage('Python_check') {
+            steps {
+              sh 'python3 --version || python --version'
+            }    
+        }
+
         stage('Lint') {
             steps {
                 echo "Running code linting..."
-                // Assuming your Makefile has a 'lint' target
                 sh 'make lint'
                 echo "Linting Passed!"
             }
@@ -14,7 +20,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Running tests..."
-                // Assuming your Makefile has a 'test' target
                 sh 'make test'
                 echo "Tests Passed!"
             }
