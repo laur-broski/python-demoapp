@@ -3,7 +3,7 @@ pipeline {
 
     stages {
 
-        sage('Python_check') {
+        stage('Python_check') {
             steps {
               sh 'python3 --version || python --version'
             }    
