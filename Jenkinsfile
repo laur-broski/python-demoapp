@@ -6,7 +6,6 @@ pipeline {
         stage('Python_check') {
             steps {
               sh 'python --version'
-              sh 'python -m ensurepip --upgrade'
             }    
         }
 
